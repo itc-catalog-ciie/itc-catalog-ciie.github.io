@@ -2235,8 +2235,6 @@ let isSearching = false; // 新增：是否正在搜索
 let companies = [];
 
 function loadCSVData() {
-    alert("开始加载企业数据...");
-    
     Papa.parse('data/companies_20251027.csv', {
         download: true,
         header: true,
@@ -2271,8 +2269,6 @@ function loadCSVData() {
                         wechat: company.wechat || ''
                     }
                 }));
-                
-                alert(`成功加载 ${companies.length} 家公司数据！`);
                 
                 // 检查是否有初始化分类的函数，如果有则调用
                 if (typeof initCategories === 'function') {
@@ -2986,6 +2982,7 @@ if (filteredProducts.length === 0) {
     </script>
 </body>
 </html>
+
 
 
 
