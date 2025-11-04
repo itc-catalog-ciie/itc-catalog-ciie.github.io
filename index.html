@@ -1701,19 +1701,36 @@ margin-top: 5px;
 }
 
 .nav-item i {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
+    font-size: 1.3rem;
+    margin-bottom: 4px;
     color: #1a2a6c;
 }
 
-.nav-item span {
-    font-size: 0.8rem;
-    color: #333;
-    font-weight: 500;
+.nav-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.nav-item.active i,
-.nav-item.active span {
+.nav-text-zh {
+    font-size: 0.75rem;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 1px;
+}
+
+.nav-text-en {
+    font-size: 0.6rem;
+    color: #666;
+    font-style: italic;
+    line-height: 1;
+    opacity: 0.8;
+}
+
+.nav-item.active .nav-text-zh,
+.nav-item.active .nav-text-en,
+.nav-item.active i {
     color: #4fc3f7;
 }
 
@@ -1741,11 +1758,17 @@ margin-top: 5px;
     }
     
     .nav-item i {
-        font-size: 1.3rem;
+       font-size: 1.2rem;
+        margin-bottom: 3px;
     }
     
-    .nav-item span {
-        font-size: 0.75rem;
+    .nav-text-zh {
+        font-size: 0.7rem;
+        margin-bottom: 0;
+    }
+    
+    .nav-text-en {
+        font-size: 0.55rem;
     }
     
     .container {
@@ -1844,11 +1867,17 @@ margin-top: 5px;
 <div class="bottom-navbar">
     <div class="nav-item" onclick="goToCover()">
         <i class="fas fa-home"></i>
-        <span>首页</span>
+       <div class="nav-text">
+            <span class="nav-text-zh">首页</span>
+            <span class="nav-text-en">Home</span>
+        </div>
     </div>
     <div class="nav-item" onclick="goToCompanies()">
         <i class="fas fa-building"></i>
-        <span>展商</span>
+        <div class="nav-text">
+            <span class="nav-text-zh">展商</span>
+            <span class="nav-text-en">Exhibitors</span>
+        </div>
     </div>
 </div>  
 <body>
@@ -2981,6 +3010,7 @@ if (filteredProducts.length === 0) {
     </script>
 </body>
 </html>
+
 
 
 
